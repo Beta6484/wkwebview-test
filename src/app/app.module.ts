@@ -1,5 +1,6 @@
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Camera } from '@ionic-native/camera';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,6 +28,7 @@ import { MyApp } from './app.component';
     SplashScreen,
     InAppBrowser,
     SocialSharing,
+    Camera,
     {
       provide: ErrorHandler,
       useClass: IonicErrorHandler

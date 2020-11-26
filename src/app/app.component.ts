@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Camera } from '@ionic-native/camera';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,7 +18,8 @@ export class MyApp {
     statusBar: StatusBar,
     splashScreen: SplashScreen,
     private iab: InAppBrowser,
-    private socialSharing: SocialSharing
+    private socialSharing: SocialSharing,
+    private camera: Camera
   ) {
     platform.ready().then(() => {
       statusBar.styleDefault();
@@ -31,6 +33,22 @@ export class MyApp {
 
   public testSocialShare() {
     this.socialSharing.shareViaFacebook('https://wkm.com.br');
+  }
+
+  public testCamera() {
+    this.camera.getPicture({
+      sourceType: 1,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      targetWidth: 200,
+      targetHeight: 200,
+      allowEdit: true,
+      encodingType: this.camera.EncodingType.JPEG,
+      saveToPhotoAlbum: true
+    }).then(img => {
+      console.log(img);
+    }, err => {
+      console.log(err);
+    });
   }
 }
 
