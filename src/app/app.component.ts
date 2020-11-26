@@ -5,6 +5,7 @@ import { SafariViewController } from '@ionic-native/safari-view-controller';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { Platform } from 'ionic-angular';
 import { HomePage } from '../pages/home/home';
 
@@ -21,7 +22,8 @@ export class MyApp {
     private iab: InAppBrowser,
     private socialSharing: SocialSharing,
     private camera: Camera,
-    private safari: SafariViewController
+    private safari: SafariViewController,
+    private youtube: YoutubeVideoPlayer
   ) {
     platform.ready().then(() => {
       statusBar.styleDefault();
@@ -69,6 +71,10 @@ export class MyApp {
           console.log('Impossível acessar o safari')
         }
       })
+  }
+
+  public testYoutube() {
+    this.youtube.openVideo('hiOjK992bPU');
   }
 }
 

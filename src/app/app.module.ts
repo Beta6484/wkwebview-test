@@ -6,6 +6,7 @@ import { SafariViewController } from '@ionic-native/safari-view-controller';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HomePage } from '../pages/home/home';
 import { MyApp } from './app.component';
@@ -31,6 +32,7 @@ import { MyApp } from './app.component';
     SocialSharing,
     Camera,
     SafariViewController,
+    YoutubeVideoPlayer,
     {
       provide: ErrorHandler,
       useClass: IonicErrorHandler
