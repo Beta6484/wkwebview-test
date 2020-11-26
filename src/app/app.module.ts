@@ -2,6 +2,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Camera } from '@ionic-native/camera';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { SafariViewController } from '@ionic-native/safari-view-controller';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -29,6 +30,7 @@ import { MyApp } from './app.component';
     InAppBrowser,
     SocialSharing,
     Camera,
+    SafariViewController,
     {
       provide: ErrorHandler,
       useClass: IonicErrorHandler

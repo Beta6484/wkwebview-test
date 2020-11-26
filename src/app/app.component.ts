@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Camera } from '@ionic-native/camera';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { SafariViewController } from '@ionic-native/safari-view-controller';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -19,7 +20,8 @@ export class MyApp {
     splashScreen: SplashScreen,
     private iab: InAppBrowser,
     private socialSharing: SocialSharing,
-    private camera: Camera
+    private camera: Camera,
+    private safari: SafariViewController
   ) {
     platform.ready().then(() => {
       statusBar.styleDefault();
@@ -49,6 +51,24 @@ export class MyApp {
     }, err => {
       console.log(err);
     });
+  }
+
+  public testSafari() {
+    this.safari.isAvailable()
+      .then((ok: boolean) => {
+        if(ok) {
+          this.safari.show({
+            url: 'https://wkm.com.br',
+            hidden: false,
+            animated: true,
+            transition: 'curl',
+            enterReaderModeIfAvailable: true,
+            tintColor: '#0000ff'
+          })
+        } else {
+          console.log('Impossível acessar o safari')
+        }
+      })
   }
 }
 
