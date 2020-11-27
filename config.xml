@@ -169,6 +169,5 @@
     <preference name="SplashScreenDelay" value="10000" />
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="YouTubeDataApiKey" value="AIzaSyDQJOG1UQBDHYeuvgwreGFM8cGaaAzTox4" />
     <preference name="CameraUsesGeolocation" value="false" />
 </widget>
